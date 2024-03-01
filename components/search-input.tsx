@@ -33,6 +33,8 @@ export const SearchInput = () => {
       url: window.location.href,
       query,
      }, { skipEmptyString: true, skipNull: true });
+      
+     router.push(url);
 
     }, [debouncedValue, router, categoryId]);
 
@@ -40,6 +42,8 @@ export const SearchInput = () => {
         <div className="relative">
             <Search className="absolute h-4 w-4 top-3 left-4 text-muted-foreground"/>
             <Input
+            onChange={onChange}
+            value={value}
             placeholder="Search..."
             className="pl-10 bg-primary/10"
             />
